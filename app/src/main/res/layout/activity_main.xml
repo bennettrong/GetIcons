@@ -1,42 +1,117 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
-    android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context=".MainActivity"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
 
-        <Spinner android:id="@+id/spinner"
-            android:layout_height="match_parent"
-            android:layout_width="0dp"
-            android:layout_weight="1"/>
-        <Button android:id="@+id/get"
-            android:layout_height="match_parent"
-            android:layout_width="wrap_content"
-            android:text="get"
-            />
-    </LinearLayout>
-    <RelativeLayout
-        android:layout_height="0dp"
-        android:layout_weight="4"
-        android:layout_width="match_parent">
-        <TextView
-            android:id="@+id/textinfo"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentTop="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <Spinner android:id="@+id/spinner"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <Button android:id="@+id/get"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:text="get"
+                />
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+            <TextView
+                android:id="@+id/textinfo"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp" />
+            <ImageView
+
+                android:layout_centerHorizontal="true"
+                android:layout_height="64dp"
+                android:layout_below="@id/textinfo"
+                android:layout_width="64dp"
+                android:scaleType="fitXY"
+                android:background="@android:color/holo_red_dark"
+                android:id="@+id/img"
+                />
+        </RelativeLayout>
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+        <TextView android:id="@+id/radiotip"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"/>
+
+
         <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_activity_padding"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/photo1"/>
 
-            android:layout_centerInParent="true"
-            android:layout_height="64dp"
-            android:layout_width="64rdp"
-            android:background="@android:color/holo_red_dark"
-            android:id="@+id/img" />
-    </RelativeLayout>
-</LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_padding"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/dominant_color"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"/>
+
+        <LinearLayout
+            android:id="@+id/dominant_color"
+            android:layout_width="96dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            tools:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_padding"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/default_activity_padding"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/palette"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"/>
+
+        <LinearLayout
+            android:id="@+id/palette"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!-- Will be filled dinamically with swatches -->
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+
+
+
+
+
+
+
